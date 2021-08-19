@@ -15,13 +15,11 @@ const books = [
 /*
 Réalise un script script_5.js qui affichera dans la console les questions suivantes et leurs réponses :
 
-Trouve le livre avec l'ID: 873495 ;
-Supprime le livre avec l'ID: 133712 ;
 Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé).
 */
 
 // Est-ce que tous les livres ont été au moins empruntés une fois ?
-once_borrowed  = function(entrepreneurs) {
+once_borrowed  = function(books) {
     console.log("Tous les livres ont-ils été empruntés au moins une fois ? ")
     is_borrowed = 0
     books.forEach(book => {
@@ -47,5 +45,33 @@ console.log("Quel est le livre le + et le - emprunté ?")
     console.log(`Le livre le + emprunté est : "${ordered_list[0].title}", il a été emprunté ${ordered_list[0].rented} fois ! :) ` )
     // console.log("Voici l'array des livres ordonné du + au - emprunté : ")
     console.log(`Le livre le - emprunté est : "${ordered_list[(ordered_list.length)-1].title}", il a été emprunté ${ordered_list[(ordered_list.length)-1].rented} fois ! :( `)
+}
+
+//Trouve le livre avec l'ID: 873495 ;
+const find_id = function(id) {
+    console.log(`Quel est le livre avec l'ID : ${id} ? `)
+    books.forEach(book => {
+        if(book.id === id){
+            console.log(`Le livre correspondant à l'ID : ${id} est "${book.title}" ! `)
+        return
+        }
+    })  
+}
+
+//Supprime le livre avec l'ID: 133712 ;
+const delete_book = function(books,id_book) {
+    let book_to_delete
+    console.log(`Supprimons le livre avec l'ID : ${id_book} ! `)
+    books.forEach(book => {
+        if(book.id === id_book){            
+            book_to_delete = book.title
+            delete book
+            // console.log(books)
+            return         
+        }
+        // console.log(book)
+    })
+    console.log(`Voici la nouvelle liste sans "${book_to_delete}" ! `)
+    console.log(books)
 }
 

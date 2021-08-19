@@ -15,4 +15,5 @@ Pour script_4.js :
 Pour script_5.js :
     once_borrowed(books)
     rented(books)
-    
+    find_id(ID) //remplacer ID par l'ID du livre à rechercher
+    delete_book(books,id_book) //ne supprime pas le fichier, je ne comprends pas pourquoi...
