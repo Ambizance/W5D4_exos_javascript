@@ -65,9 +65,9 @@ const age = function(entrepreneurs) {
     })
  }
 
- 
+
 //Trie les entrepreneurs par ordre alphabétique du nom de famille.
-const ordered = function(entrepreneurs) {
+const orderedAZ = function(entrepreneurs) {
     let ordered_list = entrepreneurs.sort(function(a, b){
         if(a.last < b.last) { return -1; }
         if(a.last > b.last) { return 1; }
